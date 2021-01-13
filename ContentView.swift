@@ -11,6 +11,10 @@ struct ContentView: View {
     @State var username = ""
     @State var email = ""
     
+    var disableForm: Bool {
+        username.count < 5 || email.count < 5
+    }
+    
     var body: some View {
         Form {
             Section {
@@ -19,9 +23,9 @@ struct ContentView: View {
             }
             Section {
                 Button("Create account") {
-                print("Creating account…")
+                    print("Creating account…")
                 }
-            }.disabled(username.isEmpty || email.isEmpty)//Disabled if no input
+            }.disabled(disableForm)//Disabled if no input
 
         }
     }
