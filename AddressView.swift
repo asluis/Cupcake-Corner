@@ -11,9 +11,19 @@ struct AddressView: View {
     
     @ObservedObject var order:Order
     
+    @State var name = ""
+    @State var address = ""
+    @State var city = ""
+    @State var zip = ""
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            Form{
+                NavigationLink(destination: CheckOutView(order: order)){
+                    Text("Check out")
+                }
+            }
+        }
     }
 }
 
