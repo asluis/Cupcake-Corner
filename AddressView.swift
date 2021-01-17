@@ -19,10 +19,22 @@ struct AddressView: View {
     var body: some View {
         NavigationView{
             Form{
-                NavigationLink(destination: CheckOutView(order: order)){
-                    Text("Check out")
+                
+                Section{
+                    TextField("Name", text: $name)
+                    TextField("Address", text: $address)
+                    TextField("City", text: $city)
+                    TextField("ZIP", text: $zip)
+                }
+                
+                
+                Section{
+                    NavigationLink(destination: CheckOutView(order: order)){
+                        Text("Check out")
+                    }
                 }
             }
+            .navigationBarTitle("Delivery Details", displayMode: .inline)
         }
     }
 }
