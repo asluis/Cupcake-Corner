@@ -15,6 +15,10 @@ class Order: ObservableObject{
     
     @Published var cakeType = 0 // Defaults to vanilla
     @Published var cakesOrdered = 3
+    @Published var name = ""
+    @Published var address = ""
+    @Published var city = ""
+    @Published var zip = ""
     
     @Published var specialRequest = false {
         didSet{

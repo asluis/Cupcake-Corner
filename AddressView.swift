@@ -11,20 +11,15 @@ struct AddressView: View {
     
     @ObservedObject var order:Order
     
-    @State var name = ""
-    @State var address = ""
-    @State var city = ""
-    @State var zip = ""
-    
     var body: some View {
         NavigationView{
             Form{
                 
                 Section{
-                    TextField("Name", text: $name)
-                    TextField("Address", text: $address)
-                    TextField("City", text: $city)
-                    TextField("ZIP", text: $zip)
+                    TextField("Name", text: $order.name)
+                    TextField("Address", text: $order.address)
+                    TextField("City", text: $order.city)
+                    TextField("ZIP", text: $order.zip)
                 }
                 
                 
