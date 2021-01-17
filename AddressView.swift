@@ -11,6 +11,8 @@ struct AddressView: View {
     
     @ObservedObject var order:Order
     
+    
+    
     var body: some View {
         NavigationView{
             Form{
@@ -26,7 +28,7 @@ struct AddressView: View {
                 Section{
                     NavigationLink(destination: CheckOutView(order: order)){
                         Text("Check out")
-                    }
+                    }.disabled(order.hasValidAddress == false)
                 }
             }
             .navigationBarTitle("Delivery Details", displayMode: .inline)

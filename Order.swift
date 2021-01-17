@@ -20,6 +20,28 @@ class Order: ObservableObject{
     @Published var city = ""
     @Published var zip = ""
     
+    var price:Double {
+        var cost:Double = 2
+        
+        if extraFrosting {
+            cost += 1.0
+        }
+        
+        if addSprinkles {
+            cost += 0.5
+        }
+        
+        return cost * (Double)(cakesOrdered)
+    }
+    
+    
+    var hasValidAddress:Bool {
+        if name.isEmpty || address.isEmpty || city.isEmpty || zip.isEmpty {
+            return false
+        }
+        return true
+    }
+    
     @Published var specialRequest = false {
         didSet{
             if specialRequest == false{
