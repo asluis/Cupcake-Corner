@@ -10,5 +10,5 @@ App that lets user customize what type of cupcake they want from preselected opt
  - Receive data back from website and display it to user
  
  ## Potential
- This app could potentially become, if heavily modifies, an app where the user buys something from a website. The fact that we send data to the website and 
+ This app could potentially become, if heavily modified, an app where the user buys something from a website. The fact that we send data to the website and 
  receive back a confirmation opens up possibilities.
