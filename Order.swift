@@ -93,6 +93,13 @@ class Order: ObservableObject, Codable{
         if name.isEmpty || address.isEmpty || city.isEmpty || zip.isEmpty {
             return false
         }
+        
+        // Checking if user merely typed in blank chars
+        if address.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || city.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || city.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty{
+            return false
+        }
+        
+        
         return true
     }
     

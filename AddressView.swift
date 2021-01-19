@@ -22,6 +22,7 @@ struct AddressView: View {
                     TextField("Address", text: $order.address)
                     TextField("City", text: $order.city)
                     TextField("ZIP", text: $order.zip)
+                        .keyboardType(.numberPad)
                 }
                 
                 
